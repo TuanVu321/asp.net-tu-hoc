@@ -11,7 +11,7 @@ namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValueController : Controller
+    public class ValueController : ControllerBase
     {
         private readonly DataContext _context;
 
