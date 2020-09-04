@@ -53,6 +53,14 @@ namespace WebApplication.Controllers
             return Ok();
             
         }
+
+        // [HttpGet]
+        // public IActionResult FindByValue()
+        // {
+        //     const string find = "value1";
+        //     var value = _context.Values.Where(s=>s.Name.Contains(find));
+        //     return Ok(value);
+        // }
         
     }
 }

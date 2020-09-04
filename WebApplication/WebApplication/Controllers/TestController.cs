@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Repository;
 
@@ -16,17 +17,11 @@ namespace WebApplication.Controllers
         }
 
         [HttpGet]
-        public async  Task<IActionResult> Index()
+        public async  Task<IActionResult> ShowAll()
         {
             var value = await _crud.GetAllValue();
             return Ok(value);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> FindByValue()
-        {
-            var  value = await _crud.GetValueById()
-        }
-        
     }
 }
