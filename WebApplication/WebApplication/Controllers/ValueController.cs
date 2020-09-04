@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using WebApplication.Data;
@@ -11,6 +12,7 @@ namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ValueController : ControllerBase
     {
         private readonly DataContext _context;
@@ -19,14 +21,14 @@ namespace WebApplication.Controllers
         {
             _context = context;
         }
-
+        
         [HttpGet]
         public IActionResult GetValues()
         {
             var values = _context.Values.ToList();
             return Ok(values);
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public IActionResult GetValueById(int id)
         {
