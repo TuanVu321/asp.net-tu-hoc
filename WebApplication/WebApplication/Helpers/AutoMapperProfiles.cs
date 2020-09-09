@@ -22,6 +22,9 @@ namespace WebApplication.Helpers
                     =>opt.MapFrom(src=>src.DateOfBirth.CaculateAge()));
            
             CreateMap<Photo, PhotosForDetailedDto>();
+
+            CreateMap<UserForUpdateDto, User>();
+
         }
     }
 }
