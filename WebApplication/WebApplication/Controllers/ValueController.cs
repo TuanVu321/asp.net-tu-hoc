@@ -23,6 +23,7 @@ namespace WebApplication.Controllers
         }
         
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult GetValues()
         {
             var values = _context.Values.ToList();
